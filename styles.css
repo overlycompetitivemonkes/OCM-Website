@@ -1,0 +1,261 @@
+/* written by @misterfonka on discord. */
+
+/* body styles - basic layout and gradient background */
+body {
+    font-family: Arial, sans-serif; /* sets a simple sans-serif font */
+    margin: 0; /* removes default margins */
+    padding: 0; /* removes default padding */
+    overflow-x: hidden; /* prevents horizontal scrolling */
+    background: linear-gradient(-45deg, #003b27, #03fc84, #006640, #00a85f); /* smooth gradient background */
+    background-size: 400% 400%; /* creates a large gradient for animation */
+    animation: gradientAnimation 30s ease infinite; /* applies the gradient animation */
+    color: white; /* default text color is white */
+}
+
+/* keyframes for the gradient animation to create a moving effect */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%; /* starting position of the gradient */
+    }
+    25% {
+        background-position: 100% 50%; /* moves gradient halfway */
+    }
+    50% {
+        background-position: 100% 100%; /* moves gradient to the bottom-right */
+    }
+    75% {
+        background-position: 0% 100%; /* moves gradient to bottom-left */
+    }
+    100% {
+        background-position: 0% 50%; /* returns gradient to start position */
+    }
+}
+
+/* header styles - the top section of the page */
+header {
+    background: linear-gradient(to right, #004d33, #006640, #00a85f); /* gradient background */
+    color: white; /* text color is white */
+    padding: 40px 20px; /* padding for top/bottom and sides */
+    text-align: center; /* centers the text */
+    position: relative; /* allows the box-shadow to work */
+    z-index: 2; /* makes sure header is above other elements */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* adds shadow for depth */
+    border-bottom: 5px solid #00a85f; /* green bottom border */
+}
+
+/* header text (h1) style with gradient and shadow effects */
+header h1 {
+    margin: 0; /* removes margin around h1 */
+    font-size: 3em; /* large text size */
+    font-family: "Poppins", sans-serif; /* uses a clean sans-serif font */
+    font-weight: 700; /* bold text */
+    background: linear-gradient(to right, #00ff88, #03fc84, #00a85f); /* gradient for text */
+    -webkit-background-clip: text; /* makes the background clip the text */
+    -webkit-text-fill-color: transparent; /* makes text color transparent */
+    background-clip: text; /* ensures background clips within the text */
+    color: transparent; /* text color is transparent */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* subtle text shadow for visibility */
+}
+
+/* navigation link styles */
+nav {
+    display: flex; /* uses flexbox for layout */
+    justify-content: center; /* centers the links horizontally */
+    background-color: #03fc84; /* bright green background */
+    padding: 10px; /* padding around links */
+    position: relative; /* makes sure z-index works */
+    z-index: 2; /* keeps nav above other elements */
+}
+
+nav a {
+    color: #4caf50; /* green color for the links */
+    margin: 0 15px; /* spaces out the links */
+    text-decoration: none; /* removes underline */
+    font-size: 1.1em; /* slightly larger font size */
+    font-weight: bold; /* bold text */
+    border-bottom: 2px solid transparent; /* initial invisible border for hover effect */
+    transition: color 0.3s, border-bottom-color 0.3s, text-shadow 0.3s; /* smooth transitions for hover effects */
+}
+
+nav a:hover {
+    color: #00c853; /* bright green on hover */
+    border-bottom-color: #00c853; /* green border on hover */
+    text-shadow: 0 0 8px #00c853; /* glowing effect on hover */
+}
+
+/* styles for different sections of the page */
+.section {
+    padding: 20px; /* adds space inside sections */
+    text-align: center; /* centers content */
+    position: relative; /* for layering with z-index */
+    z-index: 2; /* makes sure sections are above other elements */
+    background-color: rgba(0, 54, 36, 0.8); /* semi-transparent dark background */
+    margin: 10px auto; /* spaces out sections */
+    border-radius: 8px; /* rounded corners */
+    max-width: 90%; /* limits the width */
+}
+
+.section a {
+    color: #00ff88; /* green color for links */
+    text-decoration: none; /* removes underline */
+    font-weight: bold; /* bold text */
+    border-bottom: 2px solid transparent; /* invisible border for hover effect */
+    transition: color 0.3s, border-bottom-color 0.3s; /* smooth transitions for hover effects */
+}
+
+.section a:hover {
+    color: #03fc84; /* bright green color on hover */
+    border-bottom-color: #03fc84; /* green border on hover */
+    text-shadow: 0 0 8px #03fc84; /* glowing effect on hover */
+}
+
+/* team member image and name styles */
+.team-member {
+    display: inline-block; /* displays team members side by side */
+    margin: 10px; /* spaces out the members */
+    text-align: center; /* centers text under each image */
+}
+
+.team-member img {
+    border-radius: 50%; /* circular images */
+    border: 2px solid #03fc84; /* green border around images */
+    width: 100px; /* fixed image width */
+    height: 100px; /* fixed image height */
+}
+
+/* footer styles */
+footer {
+    background: linear-gradient(to top, #004d33, #006640); /* gradient background */
+    color: white; /* white text */
+    text-align: center; /* centers text */
+    padding: 20px 10px; /* padding around footer */
+    margin-top: auto; /* ensures footer sticks to bottom */
+    position: relative; /* allows layering with z-index */
+    z-index: 2; /* keeps footer above other elements */
+    font-size: 1em; /* normal text size */
+}
+
+footer a {
+    color: #03fc84; /* green color for links */
+    text-decoration: none; /* removes underline */
+    font-weight: bold; /* bold text */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* smooth hover effects */
+}
+
+footer a:hover {
+    color: #00ff88; /* light green color on hover */
+    text-shadow: 0 0 8px #00ff88; /* glowing effect on hover */
+}
+
+footer p {
+    margin: 10px 0; /* spaces out paragraphs in footer */
+}
+
+/* responsive footer for smaller screens */
+@media (max-width: 600px) {
+    footer {
+        font-size: 0.9em; /* smaller font size on mobile */
+        padding: 15px 5px; /* reduces padding */
+    }
+
+    footer p {
+        margin: 8px 0; /* adjusts margin for paragraphs */
+    }
+}
+
+/* link styles */
+a {
+    text-decoration: none; /* removes underline */
+}
+
+a:hover {
+    text-decoration: none; /* ensures no underline on hover */
+}
+
+html {
+    scroll-behavior: smooth; /* smooth scroll between sections */
+}
+
+/* styles for team member roles (captain, co-captain, etc.) */
+.role {
+    font-size: 14px; /* smaller font for roles */
+    margin-top: 5px; /* spacing above the role text */
+}
+
+.captain-role {
+    color: yellow; /* yellow for captains */
+    font-weight: bold; /* bold for emphasis */
+}
+
+.co-captain-role {
+    color: lightblue; /* light blue for co-captains */
+    font-weight: bold; /* bold for emphasis */
+}
+
+.default-role {
+    color: #cccccc; /* grey for default role */
+}
+
+/* modal styles for when you click a team member's image */
+.modal {
+    display: none; /* starts hidden */
+    position: fixed; /* fixed position on the screen */
+    z-index: 1000; /* makes sure it's on top of everything */
+    left: 0; /* aligns to the left */
+    top: 0; /* aligns to the top */
+    width: 100%; /* full width */
+    height: 100%; /* full height */
+    overflow: hidden; /* hides content outside the modal */
+    background-color: rgba(0, 0, 0, 0.8); /* dark overlay */
+    justify-content: center; /* centers the modal */
+    align-items: center; /* aligns the content */
+}
+
+.modal-content {
+    position: relative; /* relative position for positioning inside modal */
+    background-color: white; /* white background for content */
+    border-radius: 10px; /* rounded corners for the modal */
+    padding: 10px; /* padding inside modal */
+    max-width: 90%; /* limits max width */
+    max-height: 90%; /* limits max height */
+    display: flex; /* flexbox for centering image */
+    justify-content: center; /* centers image horizontally */
+    align-items: center; /* centers image vertically */
+}
+
+.modal-content img {
+    max-width: 100%; /* ensures image doesn't overflow */
+    max-height: 100%; /* ensures image doesn't overflow */
+    border-radius: 8px; /* rounded corners for image */
+}
+
+.close {
+    position: fixed; /* fixed in place for close button */
+    top: 10px; /* 10px from the top */
+    right: 10px; /* 10px from the right */
+    color: white; /* white color for close button */
+    font-size: 30px; /* large close button */
+    font-weight: bold; /* bold text for close button */
+    cursor: pointer; /* changes to pointer when hovered */
+    z-index: 2000; /* ensures close button is above other elements */
+}
+
+.close:hover {
+    color: red; /* changes color to red on hover */
+}
+
+/* about us section */
+#about {
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(0, 54, 36, 0.8);
+    margin: 10px auto;
+    border-radius: 8px;
+    max-width: 90%;
+}
+
+#about p {
+    font-size: 1.1em;
+    color: #ffffff;
+    line-height: 1.6;
+}
